@@ -29,6 +29,7 @@ public class QuizDAO {
             statement.setString(4, quiz.getOptionC());
             statement.setString(5, quiz.getOptionD());
             statement.setString(6, quiz.getAnswer());
+            statement.executeUpdate();
         } catch (SQLException e){
             System.out.println("Insert Failed: " + e.getLocalizedMessage());
         }
@@ -81,7 +82,7 @@ public class QuizDAO {
     }
     
     public void update(ModelQuiz quiz){
-        String query = "UPDATE quiz SET question=?,option_a=?,option_b=?,option_c=?,option_d=?,answer=?";
+        String query = "UPDATE quiz SET question=?,option_a=?,option_b=?,option_c=?,option_d=?,answer=? WHERE id_quiz=?";
         try (PreparedStatement statement = conn.prepareStatement(query)) {
             statement.setString(1, quiz.getQuestion());
             statement.setString(2, quiz.getOptionA());
