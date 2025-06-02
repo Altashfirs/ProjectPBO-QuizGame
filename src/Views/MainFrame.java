@@ -50,5 +50,10 @@ public class MainFrame extends JFrame {
     // Method untuk ganti tampilan
     public void showView(String name) {
         cardLayout.show(mainPanel, name);
+        if (name.equals(UPDATE)) {
+            ((UpdateView) mainPanel.getComponent(6)).loadQuizzes();
+        } else if (name.equals(DELETE)) {
+            ((DeleteView) mainPanel.getComponent(7)).loadQuizzes();
+        }
     }
 }

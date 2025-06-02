@@ -18,11 +18,11 @@ public class UpdateView extends javax.swing.JPanel {
         this.quizController = quizController;
         this.selectedQuizId = -1;
         initComponents();
-        setupListeners();
         loadQuizzes();
+        setupListeners();
     }
     
-    private void loadQuizzes() {
+    public void loadQuizzes() {
         List<ModelQuiz> quizzes = quizController.getAllQuiz();
         DefaultTableModel model = (DefaultTableModel) jTableData.getModel();
         model.setRowCount(0);

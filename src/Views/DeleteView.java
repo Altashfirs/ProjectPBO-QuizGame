@@ -22,7 +22,7 @@ public class DeleteView extends javax.swing.JPanel {
         loadQuizzes();
     }
     
-    private void loadQuizzes() {
+    public void loadQuizzes() {
         List<ModelQuiz> quizzes = quizController.getAllQuiz();
         DefaultTableModel model = (DefaultTableModel) jTableData.getModel();
         model.setRowCount(0);
